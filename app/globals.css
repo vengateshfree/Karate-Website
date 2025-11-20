@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+
+
+
+
+/* :root {
+  --background: #ffffff;
+  --foreground: #ffffff;
+} */
+/* 
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ededed;
+    --foreground: #ededed;
+  }
+} */
+
+/* body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+
+/* :root {
+  --logo_red: #ed1f22ff;
+  --logo_yellow: #f5b31bff;
+  --logo_blue: #071657ff;
+  --logo_green: #3c9e3eff;
+  --logo_white: #fcfeffff;
+  --logo_letter_black: #212121f;
+  --logo_letter_gray: #666666ff;
+
+  --blue: #1363DF;
+  --light_blue: #E7EFFC;
+  --letter_dark: #082A5E;
+  --letter_black: #486288;
+  --white: #ffffff;
+  --background: #F2F3F8;
+  --line: #E5E5E5;
+  --black: #0f172a;
+} */
+
+/* @layer base {
+
+} */
+
+
+@layer base {
+  /* Heading 1 */
+  h1, .h1 {
+    @apply text-4xl lg:text-5xl font-bold;
+  }
+
+  /* Heading 2 */
+  h2, .h2 {
+    @apply  text-2xl lg:text-4xl font-bold;
+  }
+
+  /* Heading 3 */
+  h3, .h3 {
+    @apply text-lg lg:text-2xl font-semibold;
+  }
+
+  /* Heading 4 */
+  h4, .h4 {
+    @apply text-sm text-justify lg:text-xl font-medium;
+  }
+
+  /* Heading 5 */
+  h5, .h5 {
+    @apply text-base text-black font-medium;
+  }
+
+  /* Heading 6 */
+   .para {
+    @apply text-base font-normal;
+  }
+
+}
+
+
+
+@theme {
+
+  --color-logo_red: var(--logo_red);
+  --color-logo_green: var(--logo_green);
+  --color-logo_blue: var(--logo_blue);
+  --color-logo_green: var(--logo_green);
+  --color-logo_white: var(--logo_white);
+  --color-logo_letter_black: var(--logo_letter_black);
+  --color-logo_letter_gray: var(--logo_letter_gray);
+  --color-blue: var(--blue);
+  --color-light_blue: var(--light_blue);
+  --color-letter_dark: var(--letter_dark);
+  --color-letter_black: var(--letter_black);
+  --color-white: var(--white);
+  --color-background: var(--background);
+  --color-line: var(--line);
+  --color-black: var(--black);
+  /* --color-surface: var(--surface);
+  --color-surface2: var(--surface2);
+  --color-surface3: var(--surface3);
+  --color-hovercolor: var(--hovercolor);
+  --color-activecolor: var(--activecolor); */
+}
+
+/* Light Theme */
+:root {
+  --logo_red: #ed1f22ff;
+  --logo_yellow: #f5b31bff;
+  --logo_blue: #071657ff;
+  --logo_green: #3c9e3eff;
+  --logo_white: #fcfeffff;
+  --logo_letter_black: #212121f;
+  --logo_letter_gray: #666666ff;
+
+  --blue: #1363DF;
+  --light_blue: #E7EFFC;
+  --letter_dark: #082A5E;
+  --letter_black: #486288;
+  --white: #ffffff;
+  --background: #F2F3F8;
+  --line: #E5E5E5;
+  --black: #0f172a;
+}
+
+
+
+
+/* @layer base {
+    .h1 {
+      @apply text-4xl lg:text-5xl font-bold;
+    }
+    .h2{
+        @apply text-2xl lg:text-4xl font-bold;
+    }
+    .h3{
+        @apply text-lg  lg:text-2xl font-semibold;
+    }
+    .h4{
+        @apply text-sm text-justify lg:text-xl font-medium;
+    }
+    .h5{
+        @apply text-base text-black font-medium;
+    }
+    .para {
+      @apply text-base font-normal;
+    }
+  } */
+
+
+/* Container for the pagination */
+.containerpaginate {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+/* General page style (inactive) */
+.inactivemypaginate {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+/* Style for links inside pages (inactive) */
+.paginate-link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 12px;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* Hover effect for inactive pages */
+.inactivemypaginate:hover {
+
+  background-color: gray;
+  color: white;
+
+}
+
+/* Active page style */
+.activemypaginate {
+
+  color: white;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Active page link style */
+.active-paginate-link {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 10px;
+
+
+
+}
+
+/* Arrow style */
+.flaticon-right-arrow,
+.flaticon-left-arrow {
+  color: white;
+  font-size: 16px;
+
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.flaticon-right-arrow:hover,
+.flaticon-left-arrow:hover {
+  background-color: black;
+  color: white;
+}
