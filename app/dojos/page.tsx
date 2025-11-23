@@ -142,8 +142,9 @@ function Page() {
  
       <div data-aos="fade-up" className='shadow-lg rounded-md bg-background'>
         <div className='flex justify-center relative group'>
+      <Image height={200} width={200} src={data?.imageUrl} className='h-full w-full ' alt="" />
 
-          <img className=' rounded-t-md' src={data?.imageUrl} alt="" />
+          {/* <img className=' rounded-t-md' src={data?.imageUrl} alt="" /> */}
 
 
           <div className=" absolute group-hover:bg-black/60 duration-1000 group-hover:rounded-t-md group-hover:bg-logo_yellow h-0 bottom-0 group-hover:h-full w-full ">
