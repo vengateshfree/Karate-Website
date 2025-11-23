@@ -198,11 +198,11 @@ function Navbar({ getmydata = [] }) {
               <hr className='text-line' />
             </div>
           </Link>
-          <Link href='/events'>
-            <div onClick={() => navbarchange('/events')} className={`${nav === '/events' ? 'border-l-4 rounded-full text-blue' : ''} `}>
+          <Link href='/event'>
+            <div onClick={() => navbarchange('/event')} className={`${nav === '/event' ? 'border-l-4 rounded-full text-blue' : ''} `}>
               <hr className='text-line' />
 
-              <div onClick={() => navToggle()} className={` ${nav === '/events' ? 'text-blue' : ''} my-3 pl-10 h5`} >
+              <div onClick={() => navToggle()} className={` ${nav === '/event' ? 'text-blue' : ''} my-3 pl-10 h5`} >
                 Event
               </div>
               <hr className='text-line' />
@@ -218,21 +218,21 @@ function Navbar({ getmydata = [] }) {
               <hr className='text-line' />
             </div>
           </Link>
-          <Link href='/blogs'>
-            <div onClick={() => navbarchange('/blogs')} className={`${nav === '/blogs' ? 'border-l-4 rounded-full text-blue' : ''} `}>
+          <Link href='/blog'>
+            <div onClick={() => navbarchange('/blog')} className={`${nav === '/blog' ? 'border-l-4 rounded-full text-blue' : ''} `}>
               <hr className='text-line' />
 
-              <div onClick={() => navToggle()} className={` ${nav === '/blogs' ? 'text-blue' : ''} my-3 pl-10 h5`} >
+              <div onClick={() => navToggle()} className={` ${nav === '/blog' ? 'text-blue' : ''} my-3 pl-10 h5`} >
                 Blog
               </div>
               <hr className='text-line' />
             </div>
           </Link>
-          <Link href='/contacts'>
-            <div onClick={() => navbarchange('/contacts')} className={`${nav === '/contacts' ? 'border-l-4 rounded-full text-blue' : ''} `}>
+          <Link href='/contact'>
+            <div onClick={() => navbarchange('/contact')} className={`${nav === '/contact' ? 'border-l-4 rounded-full text-blue' : ''} `}>
               <hr className='text-line' />
 
-              <div onClick={() => navToggle()} className={` ${nav === '/contacts' ? 'text-blue' : ''} my-3 pl-10 h5`} >
+              <div onClick={() => navToggle()} className={` ${nav === '/contact' ? 'text-blue' : ''} my-3 pl-10 h5`} >
                 Contact
               </div>
               <hr className='text-line' />
@@ -285,16 +285,13 @@ function Navbar({ getmydata = [] }) {
       <div className={`${isVisible ? 'sticky   top-0  duration-1000 w-[100%]  bg-[#005691] text-white py-1 z-40'
         : 'sticky  top-0  w-[100%]   bg-[#005691]/30 duration-1000 text-white py-1 z-40'}`}>
         <div>
-          {/* <div className='bg-logo_yellow'>
-         <Marquee autoFill={true} pauseOnHover={true}  > <div className='px-10'>{getmydata && getmydata[0]?.tournamentName} - {getmydata && format(new Date(getmydata[0].startDate), 'dd/MM/yyyy')} - Enquiry : {getmydata && getmydata[0]?.enquiry} </div>    </Marquee>
-        </div> */}
+       
 
         </div>
         <div className="flex justify-between  lg:pl-[0] lg:justify-around items-center  px-3  ">
           <div className="flex  items-center justify-center">
             <div className=' w-16 md:w-16 '>
               <Image src={logo} alt="" />
-              {/* <img src={logo} alt="" /> */}
             </div>
 
           </div>
@@ -314,8 +311,8 @@ function Navbar({ getmydata = [] }) {
                 </div>
               </Link>
 
-              <Link href='/events'>
-                <div onClick={() => navbarchange('/events')} className={`${nav === '/events' ? 'h4 !text-logo_yellow ' : 'h4'}`}>
+              <Link href='/event'>
+                <div onClick={() => navbarchange('/event')} className={`${nav === '/event' ? 'h4 !text-logo_yellow ' : 'h4'}`}>
                   Event
                 </div>
               </Link>
@@ -325,17 +322,17 @@ function Navbar({ getmydata = [] }) {
                 </div>
               </Link>
 
-              <Link href='/blogs'>
+              <Link href='/blog'>
 
-                <div onClick={() => navbarchange('/blogs')} className={`${nav === '/blogs' ? 'h4 !text-logo_yellow ' : 'h4 '}`}>
+                <div onClick={() => navbarchange('/blog')} className={`${nav === '/blog' ? 'h4 !text-logo_yellow ' : 'h4 '}`}>
                   Blog
                 </div>
               </Link>
 
 
-              <Link href='/contacts'>
+              <Link href='/contact'>
 
-                <div onClick={() => navbarchange('/contacts')} className={`${nav === '/contacts' ? 'h4 !text-logo_yellow ' : 'h4 '}`}>
+                <div onClick={() => navbarchange('/contact')} className={`${nav === '/contact' ? 'h4 !text-logo_yellow ' : 'h4 '}`}>
                   Contact us
                 </div>
               </Link>

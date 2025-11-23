@@ -39,13 +39,10 @@ function page() {
       </div>
       </div>
 
-      <div className='w-[100%] lg:w-[1024px] mx-auto'>
-
+      <div className='w-[100%] lg:w-[1024px] mx-auto flex justify-center items-center my-10 '>
 
         <Image width={500} height={500} className='shadow-xl rounded-xl' src={meditate} alt="longmaster" />
-             
-
-{/* <img data-aos="fade-up"  className='lg:w-[80%] mx-auto pb-10  rounded-md' src={meditate} alt="" /> */}
+         
 </div>
 
     </div>
