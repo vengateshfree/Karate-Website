@@ -16,13 +16,20 @@ import Image from 'next/image';
 import axios from 'axios';
 function Blog() {
 
+  interface BlogType {
+  imageUrl: string;
+  title: string;
+  mini_content: string;
+  content: string;
+  short_content: string;
+}
   
       const [pageclick, setPageClick] = useState(1);
       const [search, setSearch] = useState("")
       const [limit, setlimit] = useState(3)
       const [initial, setinital] = useState(0)
 
-    const [blogs, setBlogs] = useState<[]> ([]);
+    const [blogs, setBlogs] = useState<BlogType[]> ([]);
     const [count, setCount ] = useState<number>(0);
 
     console.log(blogs, 'this is blogs')
@@ -157,10 +164,9 @@ function Blog() {
               <div className="col-span-12  lg:col-span-8 md:p-10 ">
                 <div className="grid grid-cols-12 shadow-lg rounded-xl  w-[100%] mt-10">
                   <div className="col-span-12 md:col-span-5 lg:col-span-5">
-                          {/* <Image height={200} width={200} src={data?.imageUrl} className='h-full w-full ' alt="" /> */}
+                          <Image height={200} width={200} src={data?.imageUrl} className='h-full w-full ' alt="" />
 
-                    {/* <img className="w-full h-80 md:rounded-tl-xl md:rounded-bl-xl" src={data?.imageUrl} alt="" /> */}
-                  </div>
+                </div>
                   <div className="col-span-12 md:col-span-7 p-5">
                     <div className="h-full flex flex-col justify-start">
                       <div>

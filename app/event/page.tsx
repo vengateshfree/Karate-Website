@@ -34,7 +34,18 @@ function page() {
   const [eventType, setEventType] = useState("upcoming")
 
 
-        const[event, setEvent] = useState ([]);
+  interface EventType {
+  title: string;
+  startdate: string;
+  enddate: string;
+  imageUrl: string;
+  leader: string;
+  description: string;
+}
+
+
+
+       const [event, setEvent] = useState<EventType[]>([]);
           const [eventcount, seteventcount ] = useState<number>(0);
 
           console.log(event, "event type here")

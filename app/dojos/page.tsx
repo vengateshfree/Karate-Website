@@ -17,6 +17,15 @@ import axios from 'axios';
 
 function Page() {
 
+
+  interface Dojo {
+  imageUrl: string;
+  dojoName: string;
+  aboutdojo: string;
+  incharge: string;
+  location_link: string;
+}
+
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration in milliseconds
@@ -33,7 +42,7 @@ function Page() {
         // const [blogs, setBlogs] = useState ([]);
         // const [count, setCount ] = useState<number>(0);
 
-        const[dojo, setdojo] = useState ([]);
+        const [dojo, setdojo] = useState<Dojo[]>([]);
         const [dojocount, setdojocount ] = useState<number>(0);
 
         
@@ -70,14 +79,15 @@ function Page() {
     //   search: search // Default value if not provided
     // })
   
-      const targetRef = React.useRef(null);
+      const targetRef = React.useRef<HTMLDivElement>(null);
     
-    const handlePageClick = (event) => {
+    const handlePageClick = (event : any) => {
       setPageClick(event.selected + 1);
       // const newOffset = (event.selected * limit) % getdojodata?.data?.length;
       // window.scrollTo({ top: 0, behavior: "smooth" });
       
-    targetRef.current.scrollIntoView({ behavior: "smooth" });
+  targetRef.current?.scrollIntoView({ behavior: "smooth" });
+
       console.log("wake")
     };
   
