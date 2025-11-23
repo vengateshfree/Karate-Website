@@ -44,7 +44,7 @@ function Page() {
         const response = await axios.get(`/api/dojos?page=${pageclick}&limit=${limit}&search=${search}`);
               //  const response = await axios.get('/api/dojos'); 
         
-                console.log(response, 'this is response from blogs api')
+                console.log(response, 'this is response from bogs api')
                 // const data = await response.data.data;
                 setdojo(response?.data?.data);
                 setdojocount(response?.data?.count);
@@ -143,7 +143,7 @@ function Page() {
       <div data-aos="fade-up" className='shadow-lg rounded-md bg-background'>
         <div className='flex justify-center relative group'>
 
-          <img className=' rounded-t-md' src={data?.imageurl} alt="" />
+          <img className=' rounded-t-md' src={data?.imageUrl} alt="" />
 
 
           <div className=" absolute group-hover:bg-black/60 duration-1000 group-hover:rounded-t-md group-hover:bg-logo_yellow h-0 bottom-0 group-hover:h-full w-full ">
