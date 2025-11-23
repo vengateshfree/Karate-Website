@@ -411,7 +411,9 @@ function Home() {
               </div>
             </div>
             <div className='h-full flex justify-center items-center' >
-              <img data-aos="zoom-in-down" className='flex w-[95%]  shadow-md shadow-logo_yellow rounded-lg' src="https://images.pexels.com/photos/7045758/pexels-photo-7045758.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+                    <Image height={200} width={200} src={meditate} className='h-full w-full ' alt="" />
+
+              {/* <img data-aos="zoom-in-down" className='flex w-[95%]  shadow-md shadow-logo_yellow rounded-lg' src="https://images.pexels.com/photos/7045758/pexels-photo-7045758.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" /> */}
             </div>
 
             <div data-aos="zoom-in" className='flex flex-col justify-center items-center w-[80%] mx-auto text-justify h5    text-white'>

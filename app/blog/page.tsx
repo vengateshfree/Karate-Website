@@ -157,7 +157,9 @@ function Blog() {
               <div className="col-span-12  lg:col-span-8 md:p-10 ">
                 <div className="grid grid-cols-12 shadow-lg rounded-xl  w-[100%] mt-10">
                   <div className="col-span-12 md:col-span-5 lg:col-span-5">
-                    <img className="w-full h-80 md:rounded-tl-xl md:rounded-bl-xl" src={data?.imageUrl} alt="" />
+                          <Image height={200} width={200} src={data?.imageUrl} className='h-full w-full ' alt="" />
+
+                    {/* <img className="w-full h-80 md:rounded-tl-xl md:rounded-bl-xl" src={data?.imageUrl} alt="" /> */}
                   </div>
                   <div className="col-span-12 md:col-span-7 p-5">
                     <div className="h-full flex flex-col justify-start">
