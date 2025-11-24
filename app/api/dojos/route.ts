@@ -1,8 +1,7 @@
 import { connectDB } from "@/lib/mongodb";
+import { NextRequest } from "next/server";
 
-const MONGODB_URI = process.env.MONGO_URI as string;
-
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   try {
     const db = await connectDB();
 
