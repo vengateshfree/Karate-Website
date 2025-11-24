@@ -58,7 +58,7 @@ function page() {
                 try {
                 //  const response = await axios.get('/api/events');
                 
-                        const response = await axios.get(`/api/events?page=${pageclick}&limit=${limit}&search=${search}$eventtype=${eventType}`); 
+                        const response = await axios.get(`/api/event?page=${pageclick}&limit=${limit}$eventtype=${eventType}`); 
           
                   console.log(response, 'this is response from blogs api')
                   // const data = await response.data.data;
