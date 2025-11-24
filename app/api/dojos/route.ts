@@ -5,15 +5,13 @@ export async function GET(request: NextRequest) {
   try {
     const db = await connectDB();
 
-    // Read query params (?limit=10&page=1)
     const { searchParams } = new URL(request.url);
+
     const limit = parseInt(searchParams.get("limit") || "10");
     const page = parseInt(searchParams.get("page") || "1");
 
-    // Count documents
     const count = await db.collection("dojos").countDocuments();
 
-    // Fetch paginated blogs
     const blogs = await db
       .collection("dojos")
       .find()
