@@ -1,7 +1,7 @@
 import { connectDB } from "@/lib/mongodb";
 import { NextRequest } from "next/server";
 
-export async function GET(request: NextRequest) {
+export async function GET(request = NextRequest) {
   try {
     const db = await connectDB();
 
@@ -10,13 +10,13 @@ export async function GET(request: NextRequest) {
     const limit = parseInt(searchParams.get("limit") || "10");
     const page = parseInt(searchParams.get("page") || "1");
 
-    // Count documents
+    // Count total blogs
     const count = await db.collection("blogs").countDocuments();
 
     // Fetch paginated blogs
     const blogs = await db
       .collection("blogs")
-      .find()
+      .find({})
       .skip(limit * (page - 1))
       .limit(limit)
       .toArray();
@@ -25,8 +25,10 @@ export async function GET(request: NextRequest) {
       status: "success",
       data: blogs,
       count,
+      page,
+      limit,
     });
-  } catch (error: any) {
+  } catch (error) {
     return Response.json(
       { status: "error", message: error.message },
       { status: 500 }
