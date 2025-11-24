@@ -56,9 +56,11 @@ function page() {
      useEffect(() => {
   async function fetchEvents() {
     try {
+   
       const response = await axios.get(
-        `/api/event?page=${pageclick}&limit=${limit}&eventtype=${eventType}`
-      );
+  `/api/events?page=${pageclick}&limit=${limit}&eventtype=${eventType}`
+);
+
 
       setEvent(response.data.data);
       seteventcount(response.data.count);

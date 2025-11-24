@@ -4,6 +4,7 @@ import { NextRequest } from "next/server";
 export async function GET(request: NextRequest) {
   try {
     const db = await connectDB();
+
     const searchParams = request.nextUrl.searchParams;
 
     const limit = parseInt(searchParams.get("limit") || "10");
