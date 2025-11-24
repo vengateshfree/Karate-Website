@@ -1,37 +1,39 @@
+
 import { connectDB } from "@/lib/mongodb";
 import { NextRequest } from "next/server";
 
-export async function GET(request = NextRequest) {
+export async function GET(request: NextRequest) {
   try {
     const db = await connectDB();
 
-    // Read query params (?limit=10&page=1)
-    const { searchParams } = new URL(request.url);
+    const searchParams = request.nextUrl.searchParams;
+
     const limit = parseInt(searchParams.get("limit") || "10");
     const page = parseInt(searchParams.get("page") || "1");
+    const eventtype = searchParams.get("eventtype") || "all";
 
-    // Count total blogs
-    const count = await db.collection("blogs").countDocuments();
+    const query: any = {};
+    if (eventtype !== "all") query.eventtype = eventtype;
 
-    // Fetch paginated blogs
-    const blogs = await db
+    const count = await db.collection("blogs").countDocuments(query);
+
+    const events = await db
       .collection("blogs")
-      .find({})
+      .find(query)
       .skip(limit * (page - 1))
       .limit(limit)
       .toArray();
 
     return Response.json({
       status: "success",
-      data: blogs,
+      data: events,
       count,
-      page,
-      limit,
     });
-  } catch (error) {
+  } catch (error: any) {
     return Response.json(
       { status: "error", message: error.message },
       { status: 500 }
     );
   }
 }
+
