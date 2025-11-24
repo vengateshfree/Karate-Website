@@ -1,21 +1,17 @@
 import { connectDB } from "@/lib/mongodb";
 import { NextRequest } from "next/server";
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { limit: string; page: string; eventtype: string } }
-) {
+export async function GET(request: NextRequest) {
   try {
     const db = await connectDB();
+    const searchParams = request.nextUrl.searchParams;
 
-    const limit = parseInt(params.limit);
-    const page = parseInt(params.page);
-    const eventtype = params.eventtype;
+    const limit = parseInt(searchParams.get("limit") || "10");
+    const page = parseInt(searchParams.get("page") || "1");
+    const eventtype = searchParams.get("eventtype") || "all";
 
     const query: any = {};
-    if (eventtype !== "all") {
-      query.eventtype = eventtype;
-    }
+    if (eventtype !== "all") query.eventtype = eventtype;
 
     const count = await db.collection("events").countDocuments(query);
 

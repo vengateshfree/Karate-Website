@@ -53,25 +53,23 @@ function page() {
 
           console.log(event, "event data here")
           
-            useEffect(() => {
-              async function fetchBlogs() {
-                try {
-                //  const response = await axios.get('/api/events');
-                
-                        const response = await axios.get(`/api/event?page=${pageclick}&limit=${limit}$eventtype=${eventType}`); 
-          
-                  console.log(response, 'this is response from blogs api')
-                  // const data = await response.data.data;
-                  setEvent(response?.data?.data);
-                  seteventcount(response?.data?.count);
-                } catch (error) { 
-                  console.error("Fetch error:", error);
-                }
-              }
-          
-              fetchBlogs();
-            }, []);
-  
+     useEffect(() => {
+  async function fetchEvents() {
+    try {
+      const response = await axios.get(
+        `/api/event?page=${pageclick}&limit=${limit}&eventtype=${eventType}`
+      );
+
+      setEvent(response.data.data);
+      seteventcount(response.data.count);
+    } catch (error) {
+      console.error("Fetch error:", error);
+    }
+  }
+
+  fetchEvents();
+}, [pageclick, limit, eventType]);
+
 
 //   const { data: geteventdata } = useGetAllEventQuery({
 
