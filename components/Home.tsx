@@ -446,7 +446,7 @@ function Home() {
           {
             karateBenefits?.map((item, value) => {
               return (
-                <div className='text-left h3 '>
+                <div key={value} className='text-left h3 '>
                   <div data-aos="fade-right" className='text-logo_green underline  underline-offset-4'>  {item.title}: </div>
                   <div data-aos="zoom-in" className='text-logo_blue  h3 mt-4' >
                     {item.description}

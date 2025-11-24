@@ -1,30 +1,35 @@
 import { connectDB } from "@/lib/mongodb";
 
-const MONGODB_URI = process.env.MONGO_URI as string;
-
-export async function GET(request: Request) {
+export async function GET(
+  request: Request,
+  { params }: { params: { limit: string; page: string; eventtype: string } }
+) {
   try {
     const db = await connectDB();
 
-    // Read query params (?limit=10&page=1)
-    const { searchParams } = new URL(request.url);
-    const limit = parseInt(searchParams.get("limit") || "10");
-    const page = parseInt(searchParams.get("page") || "1");
+    const limit = parseInt(params.limit);
+    const page = parseInt(params.page);
+    const eventtype = params.eventtype;
 
-    // Count documents
-    const count = await db.collection("events").countDocuments();
+    const query: any = {};
+    if (eventtype !== "all") {
+      query.eventtype = eventtype;
+    }
 
-    // Fetch paginated blogs
-    const blogs = await db
+    // Count total
+    const count = await db.collection("events").countDocuments(query);
+
+    // Fetch data
+    const events = await db
       .collection("events")
-      .find()
+      .find(query)
       .skip(limit * (page - 1))
       .limit(limit)
       .toArray();
 
     return Response.json({
       status: "success",
-      data: blogs,
+      data: events,
       count,
     });
   } catch (error: any) {
