@@ -1,7 +1,8 @@
 import { connectDB } from "@/lib/mongodb";
+import { NextRequest } from "next/server";
 
 export async function GET(
-  request: Request,
+  request: NextRequest,
   { params }: { params: { limit: string; page: string; eventtype: string } }
 ) {
   try {
@@ -16,10 +17,8 @@ export async function GET(
       query.eventtype = eventtype;
     }
 
-    // Count total
     const count = await db.collection("events").countDocuments(query);
 
-    // Fetch data
     const events = await db
       .collection("events")
       .find(query)
