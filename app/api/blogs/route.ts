@@ -1,4 +1,3 @@
-
 import { connectDB } from "@/lib/mongodb";
 import { NextRequest } from "next/server";
 
@@ -10,7 +9,7 @@ export async function GET(request: NextRequest) {
 
     const limit = parseInt(searchParams.get("limit") || "10");
     const page = parseInt(searchParams.get("page") || "1");
- 
+
     const query: any = {};
 
     const count = await db.collection("blogs").countDocuments(query);
@@ -34,4 +33,3 @@ export async function GET(request: NextRequest) {
     );
   }
 }
-
