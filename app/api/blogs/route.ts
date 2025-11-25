@@ -10,10 +10,8 @@ export async function GET(request: NextRequest) {
 
     const limit = parseInt(searchParams.get("limit") || "10");
     const page = parseInt(searchParams.get("page") || "1");
-    const eventtype = searchParams.get("eventtype") || "all";
-
+ 
     const query: any = {};
-    if (eventtype !== "all") query.eventtype = eventtype;
 
     const count = await db.collection("blogs").countDocuments(query);
 
