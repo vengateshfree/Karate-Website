@@ -4,6 +4,8 @@ export async function GET() {
   try {
     const db = await connectDB();
 
+    console.log(db, "DB Connected");
+
     const collection = db.collection("tournaments"); // EXACT NAME in MongoDB
 
     const count = await collection.countDocuments();
