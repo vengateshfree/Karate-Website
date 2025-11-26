@@ -157,7 +157,7 @@ function Page() {
           {/* <img className=' rounded-t-md' src={data?.imageUrl} alt="" /> */}
 
 
-          <div className=" absolute group-hover:bg-black/60 duration-1000 group-hover:rounded-t-md group-hover:bg-logo_yellow h-0 bottom-0 group-hover:h-full w-full ">
+          <div className=" absolute duration-1000 group-hover:rounded-t-md group-hover:bg-logo_green h-0 bottom-0 group-hover:h-full w-full ">
       <div className="flex flex-col items-center justify-center h-full">
         <div className="h3 opacity-0 group-hover:opacity-100 text-white  duration-500">
           {data?.dojoName}

@@ -11,8 +11,9 @@ export async function GET(request: NextRequest) {
     const page = parseInt(searchParams.get("page") || "1");
     const eventtype = searchParams.get("eventtype") || "all";
 
+    // FIX: correct variable name
     const query: any = {};
-    if (eventtype !== "all") query.eventtype = eventtype;
+    if (eventtype !== "all") query.eventType = eventtype;
 
     const count = await db.collection("events").countDocuments(query);
 
