@@ -1,19 +1,27 @@
 import mongoose, { Schema, Document } from "mongoose";
 
 export interface IRegistration extends Document {
-  name: string;
-  email: string;
+  fullName: string;
   phone: string;
+  dob: string;
+  gender: string;
+  Address: string;
+  academyName: string;
+  beltRank: string;
 }
 
-const Register = new Schema(
+const RegisterSchema = new Schema(
   {
-    name: { type: String, required: true },
-    email: { type: String, required: true },
+    fullName: { type: String, required: true },
     phone: { type: String, required: true },
+    dob: { type: String, required: true },
+    gender: { type: String, required: true },
+    Address: { type: String, required: true },
+    academyName: { type: String, required: true },
+    beltRank: { type: String, required: true },
   },
   { timestamps: true }
 );
 
 export default mongoose.models.Registration ||
-  mongoose.model<IRegistration>("Registration", Register);
+  mongoose.model<IRegistration>("Registration", RegisterSchema);

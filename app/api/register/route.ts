@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import register from "../../models/Register";
+import Register from "../../models/Register";
 import { connectDB } from "@/lib/mongodb";
 
 export async function POST(req: NextRequest) {
@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
 
     const body = await req.json();
 
-    const registration = await register.create(body);
+    const registration = await Register.create(body);
 
     return NextResponse.json(registration, { status: 201 });
   } catch (error: any) {

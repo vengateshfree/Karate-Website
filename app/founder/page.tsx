@@ -1,186 +1,236 @@
 "use client";
-
-// import React, {useEffect} from 'react'
-import meditate from '../../public/meditate.jpg'
-// import meditate from '../../assets/meditate.jpg'
-import first from '../../public/first.jpg'
-import longice from '../../public/longice.jpg'
-import reco from '../../public/reco.jpg'
-import icepunch from '../../public/icepunch.jpg'
-import groupmaster from '../../public/groupmaster.jpg'
-import india from '../../public/india.jpg'
-import forindia from '../../public/forindia.jpg'
+import React, { useEffect } from 'react';
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from 'react'
- 
-function page() {
+import meditate from '../../public/meditate.jpg';
+import first from '../../public/first.jpg';
+import longice from '../../public/longice.jpg';
+import reco from '../../public/reco.jpg';
+import icepunch from '../../public/icepunch.jpg';
+import groupmaster from '../../public/groupmaster.jpg';
+import india from '../../public/india.jpg';
+import forindia from '../../public/forindia.jpg';
 
+function Page() {
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+    });
+  }, []);
 
-  
-  
-    useEffect(() => {
-      AOS.init({
-        duration: 500, // Animation duration in milliseconds
-        // once: true,     // Whether animation should happen only once
-      });
-    }, []);
-  
   return (
-    <div className='text-center w-[90%] mx-auto md:w-auto '> 
-    <div className='bg-background'>
-    <div data-aos="fade-in"  className='h1 pt-10 text-logo_blue '>
-      Mastering the Art of Teaching
-      </div>
-      <div className='flex justify-center' >
-      <div data-aos="fade-in"  className='h5 mt-10 mb-5  sm:w-[90%] lg:w-[80%] flex justify-center '>
-      "With over 16 years of experience, Chinnusamy Master is not just a seasoned practitioner but also an exceptional teacher. His methodical approach and in-depth knowledge have shaped many successful karatekas under his guidance." Photo Suggestion: A photo of Chinnusamy Master teaching a class, possibly demonstrating a technique or providing individual feedback to students.
-      </div>
-      </div>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-16 px-4">
+      <div className="max-w-6xl mx-auto">
+        {/* Master Introduction Section */}
+        <div 
+          className="bg-white rounded-2xl shadow-xl p-8 mb-12"
+          data-aos="fade-up"
+        >
+          <h2 className="text-3xl font-bold text-center mb-6">
+            Dr. P. Chinnusamy - IV Dan Black Belt Master
+          </h2>
+          <p className="text-lg text-gray-700 leading-relaxed mb-4">
+            Dr. P. Chinnusamy is a distinguished IV Dan Black Belt (YONDAN) from Japan with 28 years of dedicated karate experience since 1996. As the Kyokushin Karate Instructor for World So-Kyokushin (Japan) and Tamil Nadu Branch Chief, he founded the Tamil Nadu Kyokushin Chinnu's Karate Association, affiliated with Nehru Yuva Kendra Sangathan, Government of India. His journey from earning his 1st Dan in 2009 to achieving 4th Dan in 2023 reflects unwavering commitment to martial arts excellence.
+          </p>
+          <p className="text-sm text-gray-500 italic text-center">
+            Contact: +91 9865950808 | kyokushinchinnu@gmail.com
+          </p>
+        </div>
 
-      <div className='w-[100%] lg:w-[1024px] mx-auto flex justify-center items-center my-10 '>
+        {/* Journey Section Title */}
+        <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">
+          Journey of Dr. P. Chinnusamy
+        </h1>
 
-        <Image width={500} height={500} className='shadow-xl rounded-xl' src={meditate} alt="longmaster" />
-         
-</div>
-
-    </div>
-
-      
-    
-    <div className='w-[100%] lg:w-[1024px] mx-auto'>
-
-    <div data-aos="fade-in" className='h2  mt-10 text-logo_blue'>
-      Journey of  Chinnusamy Master
-    </div>
-    <div className='flex justify-center items-center'> 
-      <div className=' lg:grid grid-cols-1 lg:grid-cols-2 '>
-      
-        <div data-aos="fade-right" className='flex flex-col justify-center items-center px-5 py-5 md:py-10 mx-1 md:mx-5 lg:py-0  lg:p-10 lg:m-10 shadow-xl rounded-lg'>
-          <div className='h3 text-logo_red my-2'>
-          First Winning Match at the National Level
+        {/* First Winning Match Section */}
+        <div 
+          className="bg-white rounded-2xl shadow-xl p-8 mb-12 flex flex-col md:flex-row items-center gap-8"
+          data-aos="fade-right"
+        >
+          <div className="md:w-1/2">
+            <Image
+              src={first}
+              alt="First national victory"
+              className="rounded-xl shadow-lg w-full h-auto"
+            />
           </div>
-          <div className='h5 text-justify  '>
-          "Chinnusamy Master’s journey to excellence began with a significant milestone—his first major victory at the national level in India. This achievement was a testament to his early dedication and exceptional skill in karate, setting the stage for his illustrious career." Photo Suggestion: A dynamic action shot from the match or a photo of Chinnusamy Master receiving his award/medal on the podium.
+          <div className="md:w-1/2">
+            <h3 className="text-2xl font-bold mb-4 text-gray-800">
+              First Winning Match at the National Level
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              Dr. Chinnusamy's journey to excellence began with significant milestones at the national level in India. His early achievements include a Best Performance at the 17th State Tournament in Kanniyakumari (2000) and III Place finishes in subsequent state championships. In 2008, he earned recognition as Best Fighter at the West Bengal National Open, cementing his reputation as a formidable competitor.
+            </p>
           </div>
-          
-          
-        </div>
-        <div data-aos="fade-left" className='m-2 md:m-5 lg:m-10 flex justify-center items-center rounded-lg'>
-           <Image width={500} height={500} className='shadow-xl rounded-xl' src={first} alt="longmaster" />
-                                
-          {/* <img src={first} alt="" className='shadow-xl rounded-xl' /> */}
         </div>
 
-     
-
-        <div data-aos="fade-right" className='hidden lg:flex m-2 md:m-5 lg:m-10 justify-center items-center rounded-lg'>
-             <Image width={500} height={500} className='shadow-xl rounded-xl' src={reco} alt="longmaster" />
-             
-          {/* <img src={reco} alt="" className='shadow-xl rounded-xl' /> */}
-        </div>
-
-        <div data-aos="fade-left" className='flex flex-col justify-center items-center px-5 py-10 md:py-10 mx-1 md:mx-5 lg:py-0  lg:p-10 lg:m-10 shadow-xl rounded-lg'>
-          <div className='h3 text-logo_red  my-2'>
-          Recognition at the World Level Masters Event
+        {/* World Level Recognition Section */}
+        <div 
+          className="bg-white rounded-2xl shadow-xl p-8 mb-12 flex flex-col md:flex-row-reverse items-center gap-8"
+          data-aos="fade-left"
+        >
+          <div className="md:w-1/2">
+            <Image
+              src={reco}
+              alt="World level recognition"
+              className="rounded-xl shadow-lg w-full h-auto"
+            />
           </div>
-          <div className='h5 text-justify  '>
-          "Chinnusamy Master’s expertise and reputation extend beyond national boundaries. His recognition at a World Level Masters event underscore his status as a leading figure in martial arts, showcasing his exceptional skills on a global stage." Photo Suggestion: A formal photo of Chinnusamy Master at the World Level Masters event, possibly with other renowned masters or in front of an international backdrop.
-
-
-           </div>
-          
-
-        </div>
-
-        {/* <div className=' lg:hidden m-2 md:m-5 lg:m-10 flex justify-center items-center rounded-lg'>
-          <img src={reco} alt="" className='shadow-xl rounded-xl' />
-        </div>
-         */}
-
-
-        
-
-
-
-
-   
-      <div  className='col-span-2 shadow-xl '>
-        <div className='flex flex-col justify-center items-center px-5 py-10 md:py-10 mx-1 md:mx-5 lg:py-0  lg:p-10 lg:m-10  rounded-lg'>
-          <div data-aos="fade-in" className='h3 text-logo_red my-5'>
-          Ice-Breaking Leadership Moments
+          <div className="md:w-1/2">
+            <h3 className="text-2xl font-bold mb-4 text-gray-800">
+              Recognition at the World Level Masters Event
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              Dr. Chinnusamy's expertise extends beyond national boundaries. He has competed in prestigious World Tournaments in Shizuoka City, Japan (October 2016 and November 2023), showcasing his exceptional skills on the global stage. His international experience also includes the 1st All Asia Weight Category Championship in Manila, Philippines (2011), where he represented India with distinction.
+            </p>
           </div>
-          <div data-aos="fade-in" className='h5 text-justify  '>
-          "As the founder of our karate school, Chinnusamy Master’s ice-breaking leadership style helped foster a welcoming and motivating environment for students. His ability to connect with each student personally is a cornerstone of his teaching philosophy." Photo Suggestion: A candid shot of Chinnusamy Master interacting with students, possibly during a class or a group activity that highlights his approachable nature.   </div>
-          
-
-        </div>
-        <div className='grid grid-cols-1 md:grid-cols-2   '>
-
-        <div data-aos="fade-right" className='m-2 md:m-5 lg:m-10 flex justify-center items-center rounded-lg'>
-                <Image width={500} height={500} className='shadow-xl rounded-xl' src={longice} alt="longmaster" />
-             
-          {/* <img src={longice} alt="" className='shadow-xl rounded-xl' /> */}
         </div>
 
-                
-        <div data-aos="fade-left" className='m-2 md:m-5 lg:m-10 flex justify-center items-center rounded-lg'>
-                        <Image width={500} height={500} className='shadow-xl rounded-xl' src={icepunch} alt="longmaster" />
-             
-          {/* <img src={icepunch} alt="" className='shadow-xl rounded-xl' /> */}
+        {/* Ice-Breaking Leadership Section */}
+        <div 
+          className="bg-white rounded-2xl shadow-xl p-8 mb-12 flex flex-col md:flex-row items-center gap-8"
+          data-aos="fade-right"
+        >
+          <div className="md:w-1/2">
+            <Image
+              src={icepunch}
+              alt="Leadership and teaching"
+              className="rounded-xl shadow-lg w-full h-auto"
+            />
+          </div>
+          <div className="md:w-1/2">
+            <h3 className="text-2xl font-bold mb-4 text-gray-800">
+              Building Excellence Through Education
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              As founder of Tamil Nadu Kyokushin Chinnu's Karate Association, Dr. Chinnusamy has shaped countless lives through his teaching at prestigious institutions including Universal Public School, Bharathi Vidyalaya, Minerva Matriculation School, and Wisdom Matric Hr. Secondary School. His approach fosters discipline, confidence, and martial arts mastery in students across Tamil Nadu.
+            </p>
+          </div>
         </div>
+
+        {/* Tournament Organization Section */}
+        <div 
+          className="bg-white rounded-2xl shadow-xl p-8 mb-12 flex flex-col md:flex-row-reverse items-center gap-8"
+          data-aos="fade-left"
+        >
+          <div className="md:w-1/2">
+            <Image
+              src={groupmaster}
+              alt="Tournament organization"
+              className="rounded-xl shadow-lg w-full h-auto"
+            />
+          </div>
+          <div className="md:w-1/2">
+            <h3 className="text-2xl font-bold mb-4 text-gray-800">
+              Organizing Championship Events
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              Dr. Chinnusamy has organized numerous tournaments from district to national levels, including the landmark State Level Kata & Kumite Championship at Gandhi Stadium, Salem, with ~500 student participants. From 2010 to 2024, he has conducted over 15 major championships including the 2019 National Level Karate Tournament for Senior & Junior at Edappadi, providing platforms for karatekas to showcase their skills.
+            </p>
+          </div>
         </div>
+
+        {/* National Unity Section */}
+        <div 
+          className="bg-white rounded-2xl shadow-xl p-8 mb-12 flex flex-col md:flex-row items-center gap-8"
+          data-aos="fade-right"
+        >
+          <div className="md:w-1/2">
+            <Image
+              src={india}
+              alt="Promoting national unity"
+              className="rounded-xl shadow-lg w-full h-auto"
+            />
+          </div>
+          <div className="md:w-1/2">
+            <h3 className="text-2xl font-bold mb-4 text-gray-800">
+              Promoting National Unity through Karate
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              Through his affiliation with Nehru Yuva Kendra Sangathan, Government of India (Affiliation No: 027/2016), Dr. Chinnusamy bridges communities across Tamil Nadu. His state-wide initiatives unite students from diverse backgrounds, fostering national integration through the discipline and respect inherent in martial arts training.
+            </p>
+          </div>
         </div>
 
-        
-    
-
-    
+        {/* International Bridges Section */}
+        <div 
+          className="bg-white rounded-2xl shadow-xl p-8 mb-12 flex flex-col md:flex-row-reverse items-center gap-8"
+          data-aos="fade-left"
+        >
+          <div className="md:w-1/2">
+            <Image
+              src={longice}
+              alt="International martial arts"
+              className="rounded-xl shadow-lg w-full h-auto"
+            />
+          </div>
+          <div className="md:w-1/2">
+            <h3 className="text-2xl font-bold mb-4 text-gray-800">
+              Building International Bridges through Martial Arts
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              As Tamil Nadu Branch Chief of World So-Kyokushin (Japan), Dr. Chinnusamy serves as a cultural ambassador, connecting Indian martial artists with the global Kyokushin community. His multiple trips to Japan and participation in international tournaments have strengthened Indo-Japanese martial arts relations and brought global best practices to Tamil Nadu.
+            </p>
+          </div>
         </div>
 
+        {/* Asian Championships Section */}
+        <div 
+          className="bg-white rounded-2xl shadow-xl p-8 mb-12 flex flex-col md:flex-row items-center gap-8"
+          data-aos="fade-right"
+        >
+          <div className="md:w-1/2">
+            <Image
+              src={forindia}
+              alt="Asian championships"
+              className="rounded-xl shadow-lg w-full h-auto"
+            />
+          </div>
+          <div className="md:w-1/2">
+            <h3 className="text-2xl font-bold mb-4 text-gray-800">
+              Fostering Peace through Asian Karate Championships
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              Dr. Chinnusamy's participation in the 1st All Asia Weight Category Championship in Manila, Philippines (2011) and the Asian Open Tournament in Kerala Trivandrum (2012) where he delivered a Best Performance, exemplifies how martial arts transcend borders. His I Place finish at the 2012 National Asian Selection Tournament in Kochi represents India's competitive spirit at the continental level.
+            </p>
+          </div>
+        </div>
 
-        
-
+        {/* Black Belt Progression Section */}
+        <div 
+          className="bg-white rounded-2xl shadow-xl p-8 mb-12"
+          data-aos="fade-up"
+        >
+          <h3 className="text-2xl font-bold mb-6 text-center text-gray-800">
+            Black Belt Achievement Timeline
+          </h3>
+          <div className="grid md:grid-cols-4 gap-6">
+            <div className="text-center p-6 bg-gray-50 rounded-xl">
+              <div className="text-3xl font-bold text-red-600 mb-2">2009</div>
+              <div className="text-xl font-semibold mb-2">1st Dan</div>
+              <div className="text-gray-600">SHODAN</div>
+            </div>
+            <div className="text-center p-6 bg-gray-50 rounded-xl">
+              <div className="text-3xl font-bold text-red-600 mb-2">2012</div>
+              <div className="text-xl font-semibold mb-2">2nd Dan</div>
+              <div className="text-gray-600">NIDAN</div>
+            </div>
+            <div className="text-center p-6 bg-gray-50 rounded-xl">
+              <div className="text-3xl font-bold text-red-600 mb-2">2017</div>
+              <div className="text-xl font-semibold mb-2">3rd Dan</div>
+              <div className="text-gray-600">SANDAN</div>
+            </div>
+            <div className="text-center p-6 bg-gray-50 rounded-xl">
+              <div className="text-3xl font-bold text-red-600 mb-2">2023</div>
+              <div className="text-xl font-semibold mb-2">4th Dan</div>
+              <div className="text-gray-600">YONDAN</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div data-aos="fade-in"  className='h2 mt-10 text-logo_blue'>
-      Promoting National Unity through Karate
-      </div>
-
-      <div data-aos="fade-in"   className='h3 !text-left my-5 lg:my-10 text-logo_red'>
-        
-
-      Building International Bridges through Martial Arts
-      </div>
-      
-      <div className='flex m-2 md:m-5 lg:m-10 justify-center items-center rounded-lg'>
-                    <Image width={500} height={500} className='shadow-xl rounded-xl' src={groupmaster} alt="longmaster" />
-             
-        {/* <img data-aos="fade-up"   className='rounded-md' src={groupmaster} alt="" /> */}
-      </div>
-      <div  data-aos="fade-in"   className='h3 !text-left my-5 lg:my-10 text-logo_red'>
-        
-
-      Fostering Peace through Asian Karate Championships
-        </div>
-        
-        <div className='grid grid-cols-1 mx-2  md:grid-cols-2 gap-5'>
-        <div className=' flex m-2 md:m-5 lg:m-10 justify-center items-center rounded-lg'>
-                    <Image width={500} height={500} className='shadow-xl rounded-xl' src={india} alt="longmaster" />
-             
-          {/* <img  data-aos="fade-right"  src={india} alt="" className='shadow-xl rounded-xl ' /> */}
-        </div>
-
-        <div className=' flex m-2 md:m-5 lg:m-10 justify-center items-center rounded-lg'>
-                    <Image width={500} height={500} className='shadow-xl rounded-xl' src={forindia} alt="longmaster" />
-             
-          {/* <img  data-aos="fade-left"  src={forindia} alt="" className='shadow-xl rounded-xl h-full w-full' /> */}
-        </div>
-
-        </div>
     </div>
-    </div>
-  )
+  );
 }
 
-export default page
+export default Page;

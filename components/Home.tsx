@@ -206,7 +206,7 @@ function Home() {
             </div>
             <div className='absolute top-10 md:top-10  h-[100%]  w-[100%]  '>
               <div className='w-full' >
-               
+
 
                 <div className='h5  text-white   '>
 
@@ -247,8 +247,7 @@ function Home() {
             Tamil Nadu Kyokshion Chinnu'S karate Association
           </div>
           <div data-aos="zoom-in" className='h4 text-center md:w-[70%] text-letter-black mx-auto px-2 md:px-0 '>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, veritatis omnis. Saepe nulla neque obcaecati, deleniti culpa voluptas, voluptatum alias odio fugit sapiente impedit temporibus accusamus magnam repudiandae sint minus?
-
+         A dedicated torchbearer of true Kyokushin spirit, he continues to uplift the standard of martial arts training across Tamil Nadu. His guidance remains a powerful force in shaping disciplined, confident, and accomplished karate champions
           </div>
 
 
@@ -257,7 +256,7 @@ function Home() {
             <div className='flex justify-center '>
               <div className='grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5' >
                 <div className=' flex justify-center' >
-                  <Image data-aos="fade-up" className='h-96 rounded-md  hover:shadow-logo_blue duration-1000 flex-col justify-between p-5 shadow-lg ' src={longmaster} alt="longmaster" />
+                  <Image data-aos="fade-up" className=' h-96 w-96 rounded-md  hover:shadow-logo_blue duration-1000 flex-col justify-between p-5 shadow-lg ' src={longmaster} alt="longmaster" />
 
                 </div>
                 <div>
@@ -266,8 +265,8 @@ function Home() {
                       MASTER CHINNASAMY
                     </div>
                     <div className='h5   mt-5 md:mt-0   text-letter-black  text-justify'>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus deserunt totam blanditiis autem necessitatibus atque dolore, quisquam aperiam sed soluta facere dicta, cum ut. Qui aliquam possimus necessitatibus repellat laborum! Est deleniti velit esse asperiores obcaecati illo fugit repellendus, possimus commodi nesciunt rerum nihil quasi, saepe sapiente? Rerum repudiandae ratione sint ex in praesentium veniam nisi dolores, sunt aliquid! Blanditiis quibusdam error voluptatem fugit fugiat porro .
-                    </div>
+                      Dr. P. Chinnusamy, IV Dan Black Belt (Japan), is a renowned Kyokushin Karate Instructor with 28 years of experience. As the Tamil Nadu Branch Chief of World So-Kyokushin (Japan) and Founder of the Tamilnadu Kyokushin Chinnu’s Karate Association, he has represented India in major Asian and World Championships and earned several prestigious awards. Since 1996, he has trained thousands of students and organized multiple state and national-level tournaments, playing a key role in developing Kyokushin Karate in Tamil Nadu. 
+                 </div>
                     <div onClick={() => navigate.push('/founder')} className='h-10 cursor-pointer w-28 mt-5 md:mt-0 bg-logo_blue flex justify-center items-center rounded-md text-white'>
                       Read More
                     </div>
@@ -411,7 +410,7 @@ function Home() {
               </div>
             </div>
             <div className='h-full flex justify-center items-center' >
-                    <Image height={200} width={200} src={meditate} className='h-full w-full ' alt="" />
+              <Image height={200} width={200} src={meditate} className='h-full w-full ' alt="" />
 
               {/* <img data-aos="zoom-in-down" className='flex w-[95%]  shadow-md shadow-logo_yellow rounded-lg' src="https://images.pexels.com/photos/7045758/pexels-photo-7045758.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" /> */}
             </div>

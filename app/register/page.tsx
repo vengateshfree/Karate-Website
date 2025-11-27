@@ -14,7 +14,7 @@ import { IoMdClose } from "react-icons/io";
 interface FormDataType {
   fullName: string;
   phone: string;
-  dob: string;
+  dob: string; 
   gender: string;
   Address: string;
   academyName: string;
@@ -42,7 +42,7 @@ export default function Register() {
     setIsLoading(true);
 
     try {
-      const res = await fetch("/api/registration", {
+      const res = await fetch("/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
