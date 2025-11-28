@@ -45,6 +45,8 @@ function Page() {
         const [dojo, setdojo] = useState<Dojo[]>([]);
         const [dojocount, setdojocount ] = useState<number>(0);
 
+        console.log(dojo, 'this is dojo state')
+
         
           useEffect(() => {
             async function fetchBlogs() {
@@ -148,11 +150,11 @@ function Page() {
 {
   dojo.map((data)=>(
 // [].map((data)=>(
-
+ 
  
       <div data-aos="fade-up" className='shadow-lg rounded-md bg-background'>
         <div className='flex justify-center relative group'>
-      <Image height={200} width={200} src={data?.imageUrl} className='h-full w-full ' alt="" />
+      <Image height={120} width={200} src={data?.imageurl} className='h-full w-full ' alt="" />
 
           {/* <img className=' rounded-t-md' src={data?.imageUrl} alt="" /> */}
 

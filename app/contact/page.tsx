@@ -54,14 +54,13 @@ function ContactPage() {
   return (
     <div className="container mx-auto p-6">
       <div data-aos="fade-in" className="h2 text-center pt-5 text-logo_blue">
-        Events
+       Contact Us
       </div>
       <div
         data-aos="fade-in"
         className="h3 text-center mt-4 mb-10 text-letter-dark"
       >
-        Elevate your well-being with classes that focus on both physical and
-        mental health.
+        Reach out today and begin your karate journey with us.
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-[100%] lg:w-[1024px] mx-auto">
@@ -76,13 +75,13 @@ function ContactPage() {
             <div className="flex flex-col justify-around h-[500px]">
               <div className="text-white h2">All Ways Welcome</div>
 
-              <div className="w-[260px] mx-auto py-5 shadow-2xl bg-white p-3 rounded-lg">
+              <div className="w-[320px] mx-auto py-5 shadow-2xl bg-white p-3 rounded-lg">
                 <div className="h3 underline">Contact</div>
 
                 <div className="flex items-center pl-5 mt-3">
                   <div className="h6 text-logo_blue font-bold">
                     Phone :
-                    <span className="text-blue font-semibold"> 9575664087</span>
+                    <span className="text-blue font-semibold">9865950808</span>
                   </div>
                 </div>
 
@@ -90,7 +89,7 @@ function ContactPage() {
                   <div className="h6 text-logo_blue font-bold">
                     Email
                     <span className="text-blue font-semibold pl-2">
-                      : Karate@gmail.com
+                      : kyokushinchinnu@gmail.com
                     </span>
                   </div>
                 </div>

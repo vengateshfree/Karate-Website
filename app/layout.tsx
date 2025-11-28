@@ -24,10 +24,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
 <div>
-  <div className="bg-[#005691] h-20" >
+  <div className="w-screen overflow-hidden" >
         <Navbar />
         </div>
-        <div className=" mt-0" >
+        <div className=" mt-17 overflow-hidden w-screen  " >
         {children}
         </div>
         <Footer />

@@ -9,6 +9,8 @@ import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+import meditate from '../../public/meditate.jpg'
+
 function Page() {
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -80,9 +82,11 @@ function Page() {
   };
 
   return (
-    <>
+    <> 
       {/* Banner Section */}
       <div className="h-[70dvh] relative">
+            <Image height={200} width={200} className='h-full w-full' src={meditate} alt="longmaster" />
+              
         <div className="h-full w-full bg-black/50 absolute top-0 flex flex-col justify-center items-center">
           <div data-aos="fade-in" className="h1 text-white">
             Events
