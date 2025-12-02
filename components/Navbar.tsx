@@ -11,6 +11,9 @@ import { SiRiotgames } from "react-icons/si";
 import Image from 'next/image';
 import { IoMdClose } from "react-icons/io";
 import axios from 'axios';
+import { BiCalendar, BiCloset, BiPhone } from 'react-icons/bi';
+import { GiTrophy } from 'react-icons/gi';
+import { CgClose } from 'react-icons/cg';
 
 // Interface for Tournament Data
 interface TournamentData {
@@ -121,6 +124,15 @@ const Navbar: React.FC<NavbarProps> = ({ getmydata = [] }) => {
     setIsMenuOpen(false);
   };
 
+    const formatDate = (dateString: any) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-GB', { 
+      day: '2-digit', 
+      month: '2-digit', 
+      year: 'numeric' 
+    });
+  };
+
   return (
     <div className='fixed top-0 w-full z-50 overflow-hidden'>
       {/* Desktop Navbar */}
@@ -188,58 +200,100 @@ const Navbar: React.FC<NavbarProps> = ({ getmydata = [] }) => {
 
       {/* Advertisement Popup */}
       {adver && popupdata && (
-        <div
-          onClick={closeAd}
-          className='h-screen w-screen fixed top-0 flex justify-center items-center z-50 bg-black/40'
+        <div onClick={()=>setAdver(false)} className='fixed inset-0 h-screen w-screen z-50 ' >
+          <div className='bg-black/50 w-screen h-screen flex justify-center items-center backdrop-blur-md' >
+       <div 
+      onClick={(e) => e.stopPropagation()} 
+      className='w-[400px] bg-white rounded-2xl shadow-2xl overflow-hidden relative animate-in fade-in zoom-in duration-300'
+    >
+      {/* Header with gradient */}
+      <div className='bg-gradient-to-r from-yellow-400 to-orange-500 p-6 relative'>
+        <button
+          onClick={() => closeAd()}
+          className='absolute top-4 right-4 p-1.5 rounded-full bg-white/20 hover:bg-white/30 transition-colors'
+          aria-label='Close'
         >
-          <div
-            onClick={(e: React.MouseEvent) => e.stopPropagation()}
-            className='w-[350px] h-[350px] rounded-lg bg-white relative'
-          >
-            <div className='absolute right-0 top-0 rounded-full'>
-              <IoMdClose
-                onClick={closeAd}
-                className='text-logo_yellow m-2 absolute right-0 cursor-pointer'
-                size={20}
-              />
-            </div>
-            <div className='h3 text-center mt-5 text-logo_blue'>
-              {popupdata.tournamentName}
-            </div>
-            <div className='px-4 mt-5 h5 text-log_letter_gray text-center'>
-              {popupdata.About}
-            </div>
-            <div className='pt-1 px-[10px] mt-5 text-logo_yellow'>
-              <span>
-                <span className='text-black pl-1.5'>Date : </span>
-                <span>
-                  {popupdata.startDate &&
-                    format(new Date(popupdata.startDate), 'dd/MM/yyyy')}
-                </span>
-              </span>
-            </div>
+          <CgClose className='w-5 h-5 text-white' />
+        </button>
+        <h2 className='text-2xl font-bold text-white pr-8 leading-tight'>
+          {popupdata?.tournamentName}
+        </h2>
+      </div>
 
-            <div className='mt-3 px-4 flex flex-col justify-between text-white'>
-              <div>
-                <span className='text-logo_blue'>Eligible : </span>
-                <span className='text-logo_yellow'>{popupdata.category}</span>
-              </div>
+      {/* Content */}
+      <div className='p-6 space-y-5'>
+        {/* About Section */}
+        <div>
+          <h3 className='text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2'>
+            About
+          </h3>
+          <p className='text-gray-700 leading-relaxed'>
+            {popupdata?.About}
+          </p>
+        </div>
 
-              <div className='mt-2'>
-                <span className='text-logo_blue'>Enquiry: </span>
-                <span className='text-logo_yellow'>{popupdata.enquiry}</span>
-              </div>
+        {/* Info Grid */}
+        <div className='space-y-3'>
+          {/* Date */}
+          <div className='flex items-start gap-3 p-3 bg-gray-50 rounded-lg'>
+            <div className='p-2 bg-yellow-100 rounded-lg'>
+              <BiCalendar className='w-5 h-5 text-yellow-600' />
             </div>
-            <div className='flex justify-center mt-7 px-5'>
-              <div
-                onClick={() => router.push('/register')}
-                className='h-10 cursor-pointer bg-logo_yellow flex justify-center items-center w-[130px] border border-logo_yellow rounded-lg font-semibold text-white'
+            <div>
+              <p className='text-xs font-medium text-gray-500 mb-0.5'>Date</p>
+              <p className='text-sm font-semibold text-gray-900'>
+                {popupdata?.startDate && formatDate(popupdata?.startDate)}
+              </p>
+            </div>
+          </div>
+
+          {/* Category */}
+          <div className='flex items-start gap-3 p-3 bg-gray-50 rounded-lg'>
+            <div className='p-2 bg-blue-100 rounded-lg'>
+              <GiTrophy className='w-5 h-5 text-blue-600' />
+            </div>
+            <div>
+              <p className='text-xs font-medium text-gray-500 mb-0.5'>Eligible Categories</p>
+              <p className='text-sm font-semibold text-gray-900'>
+                {popupdata?.category}
+              </p>
+            </div>
+          </div>
+
+          {/* Enquiry */}
+          <div className='flex items-start gap-3 p-3 bg-gray-50 rounded-lg'>
+            <div className='p-2 bg-green-100 rounded-lg'>
+              <BiPhone className='w-5 h-5 text-green-600' />
+            </div>
+            <div>
+              <p className='text-xs font-medium text-gray-500 mb-0.5'>Enquiry</p>
+              <a 
+                href={`tel:${popupdata?.enquiry}`}
+                className='text-sm font-semibold text-gray-900 hover:text-green-600 transition-colors'
               >
-                Register
-              </div>
+                {popupdata?.enquiry}
+              </a>
             </div>
           </div>
         </div>
+
+        {/* Register Button */}
+        <button
+          onClick={()=>{
+             router.push('/register')
+              setAdver(false)
+            
+            } }
+          className='w-full h-12 bg-gradient-to-r cursor-pointer from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200 flex items-center justify-center gap-2'
+        >
+          Register Now
+          <span className='text-xl'>→</span>
+        </button>
+      </div>
+    </div>
+
+    </div>
+    </div>
       )}
 
    <div className='fixed bottom-10 z-50 right-5
@@ -251,7 +305,7 @@ const Navbar: React.FC<NavbarProps> = ({ getmydata = [] }) => {
               spinDuration={20}
               className="custom-class"
             />
-            <div onClick={() => setAdver(true)} className='absolute top-0 left-0 h-full w-full flex justify-center items-center cursor-pointer' >
+            <div onClick={() => setAdver(!adver)} className='absolute top-0 left-0 h-full w-full flex justify-center items-center cursor-pointer' >
               <SiRiotgames className='text-logo_green' size={25} />
             </div>
           </div>
